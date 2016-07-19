@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Dev Complete</string>
     <string name="action_settings">Settings</string>
+
+    <string name="lbl_login">Login</string>
+    <string name="lbl_pass">Password</string>
+    <string name="btn_logInto">Log Into</string>
+    <string name="lbl_logout">Logout</string>
 </resources>

@@ -18,4 +18,41 @@
         <item name="android:windowBackground">@drawable/background_splash</item>
     </style>
 
+    <style name="txtStandard">
+        <item name="android:textSize">@dimen/text_default</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:layout_marginBottom">@dimen/margin_widget</item>
+        <item name="android:layout_marginTop">@dimen/padding_toast</item>
+    </style>
+
+    <style name="edtStandard">
+        <item name="android:textSize">@dimen/text_default</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:layout_marginBottom">@dimen/margin_widget</item>
+    </style>
+
+    <style name="AppTheme.Dark.Dialog.Info" parent="Theme.AppCompat.Dialog">
+        <item name="android:colorAccent">@color/colorWhite</item>
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="android:background">@color/colorInfo</item>
+    </style>
+
+    <style name="AppTheme.Dark.Dialog.Error" parent="Theme.AppCompat.Dialog">
+        <item name="android:colorAccent">@color/colorWhite</item>
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="android:background">@color/colorError</item>
+    </style>
+
+    <style name="AppTheme.Dark.Dialog.Success" parent="Theme.AppCompat.Dialog">
+        <item name="android:colorAccent">@color/colorWhite</item>
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="android:background">@color/colorSuccess</item>
+    </style>
+
+    <style name="AppTheme.Dark.Dialog.Alert" parent="Theme.AppCompat.Dialog">
+        <item name="android:colorAccent">@color/colorWhite</item>
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="android:background">@color/colorAlert</item>
+    </style>
+
 </resources>

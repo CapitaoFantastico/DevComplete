@@ -15,6 +15,7 @@ import br.com.devcomplete.adapter.ViewPagerAdapter;
 import br.com.devcomplete.async.AsyncUser;
 import br.com.devcomplete.fragment.FragmentProducts;
 import br.com.devcomplete.fragment.FragmentProfile;
+import br.com.devcomplete.util.Constantes;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        new AsyncUser(this).execute("http://200.200.1.101:8080/rest-web/rest/param/World");
     }
 
     private void setViewPager(ViewPager viewPager){
