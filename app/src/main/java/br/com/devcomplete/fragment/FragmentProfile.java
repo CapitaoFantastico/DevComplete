@@ -1,4 +1,4 @@
-package br.com.devcomplete;
+package br.com.devcomplete.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,10 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import br.com.devcomplete.R;
+
 /**
  * Created by ricks on 14/07/2016.
  */
-public class FragmentHello extends Fragment{
+public class FragmentProfile extends Fragment{
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -20,6 +22,6 @@ public class FragmentHello extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_hello, container, false);
+        return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 }

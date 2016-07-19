@@ -4,9 +4,6 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -14,8 +11,10 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.ArrayList;
-import java.util.List;
+import br.com.devcomplete.adapter.ViewPagerAdapter;
+import br.com.devcomplete.async.AsyncUser;
+import br.com.devcomplete.fragment.FragmentProducts;
+import br.com.devcomplete.fragment.FragmentProfile;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,45 +43,17 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        new AsyncUser(this).execute("http://200.200.1.101:8080/rest-web/rest/param/World");
     }
 
     private void setViewPager(ViewPager viewPager){
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-        viewPagerAdapter.addFragment(new FragmentHello(), "Hello");
-        viewPagerAdapter.addFragment(new FragmentHello(), "Hello 2");
+        viewPagerAdapter.addFragment(new FragmentProducts(), "Products");
+        viewPagerAdapter.addFragment(new FragmentProfile(), "Profile");
 
         viewPager.setAdapter(viewPagerAdapter);
-    }
-
-    class ViewPagerAdapter extends FragmentPagerAdapter{
-
-        private List<Fragment> fragments = new ArrayList<>();
-        private List<String> titles = new ArrayList<>();
-
-        public ViewPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return fragments.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return fragments.size();
-        }
-
-        public void addFragment(Fragment fragment, String title){
-            fragments.add(fragment);
-            titles.add(title);
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return titles.get(position);
-        }
     }
 
     @Override
