@@ -33,11 +33,11 @@ public class LoginActivity extends AppCompatActivity {
         String login = sharedPreferences.getString("login", null);
         String pass = sharedPreferences.getString("pass", null);
 
-        if(login != null && pass != null){
-            Intent i = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(i);
-            finish();
-        }
+//        if(login != null && pass != null){
+//            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+//            startActivity(i);
+//            finish();
+//        }
 
 
         edtLogin = (EditText) findViewById(R.id.edt_login);
