@@ -32,25 +32,25 @@
     </style>
 
     <style name="AppTheme.Dark.Dialog.Info" parent="Theme.AppCompat.Dialog">
-        <item name="android:colorAccent">@color/colorWhite</item>
+        <item name="colorAccent">@color/colorWhite</item>
         <item name="android:textColorPrimary">@color/colorWhite</item>
         <item name="android:background">@color/colorInfo</item>
     </style>
 
     <style name="AppTheme.Dark.Dialog.Error" parent="Theme.AppCompat.Dialog">
-        <item name="android:colorAccent">@color/colorWhite</item>
+        <item name="colorAccent">@color/colorWhite</item>
         <item name="android:textColorPrimary">@color/colorWhite</item>
         <item name="android:background">@color/colorError</item>
     </style>
 
     <style name="AppTheme.Dark.Dialog.Success" parent="Theme.AppCompat.Dialog">
-        <item name="android:colorAccent">@color/colorWhite</item>
+        <item name="colorAccent">@color/colorWhite</item>
         <item name="android:textColorPrimary">@color/colorWhite</item>
         <item name="android:background">@color/colorSuccess</item>
     </style>
 
     <style name="AppTheme.Dark.Dialog.Alert" parent="Theme.AppCompat.Dialog">
-        <item name="android:colorAccent">@color/colorWhite</item>
+        <item name="colorAccent">@color/colorWhite</item>
         <item name="android:textColorPrimary">@color/colorWhite</item>
         <item name="android:background">@color/colorAlert</item>
     </style>

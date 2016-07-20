@@ -6,4 +6,11 @@
     <string name="lbl_pass">Password</string>
     <string name="btn_logInto">Log Into</string>
     <string name="lbl_logout">Logout</string>
+
+    <!-- Form Profile -->
+    <string name="txt_Name">Name:</string>
+    <string name="txt_Mail">Mail:</string>
+    <string name="txt_Biography">Biography:</string>
+    <string name="txt_Register">Register</string>
+
 </resources>
