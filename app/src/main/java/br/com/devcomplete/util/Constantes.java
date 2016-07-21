@@ -5,6 +5,6 @@ package br.com.devcomplete.util;
  */
 public class Constantes {
 
-    public static final String URL_WS_LOGIN = "http://200.200.1.101:8080/rest-web/rest/user/login";
+    public static final String URL_WS_BASE = "http://200.200.1.101:8080/rest-web/rest/";
 
 }

@@ -4,13 +4,28 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+
 import br.com.devcomplete.R;
+import br.com.devcomplete.entity.Person;
+import br.com.devcomplete.util.Constantes;
+import cz.msebera.android.httpclient.Consts;
+import cz.msebera.android.httpclient.Header;
+import cz.msebera.android.httpclient.entity.StringEntity;
 
 /**
  * Created by ricks on 14/07/2016.
@@ -42,6 +57,32 @@ public class FragmentProfile extends Fragment{
                 if(!validateName()){
                     return;
                 }
+
+                final Gson gson = new Gson();
+                String json = gson.toJson(createPerson()); //GSON
+
+                /* Put Json elements on Json object
+                JSONObject jsonObject = new JSONObject();
+                try {
+                    jsonObject.put("id", 0);
+                    jsonObject.put("descricao", "aaa");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }*/
+
+                try {
+                    //StringEntity stringEntity = new StringEntity(jsonObject.toString()); //Using Json Object
+                    StringEntity stringEntity = new StringEntity(json);
+                    new AsyncHttpClient().post(null, Constantes.URL_WS_BASE + "user/add", stringEntity, "application/json", new JsonHttpResponseHandler() {
+                        @Override
+                        public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                            Log.d("response", response.toString());
+                            gson.fromJson(response.toString(), Person.class);
+                        }
+                    });
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -57,4 +98,15 @@ public class FragmentProfile extends Fragment{
             }
                 return true;
         }
+
+    private Person createPerson(){
+        Person person = new Person();
+        person.setBio("It's me!");
+        person.setCodOccupation(1);
+        person.setEmail("henrique@test.com");
+        person.setGender('M');
+        person.setName("Henrique Souza");
+        return person;
+    }
+
     }
